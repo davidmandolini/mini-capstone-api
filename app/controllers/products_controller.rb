@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  def all_products_method
+  def index
     info = ""
     Product.all.each do |item|
       info += "Name: #{item.name}"
@@ -12,7 +12,7 @@ class ProductsController < ApplicationController
     render json: info.as_json
   end
 
-  def product_method
+  def show
     info = "Enter an ID in the URL"
     if params["id"]
       user_id = params["id"].to_i
