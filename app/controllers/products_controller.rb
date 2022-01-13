@@ -13,13 +13,16 @@ class ProductsController < ApplicationController
   end
 
   def product_method
-    info = ""
-    product = Product.find_by(:id => "#{params["id"]}")
-    info += "Name: #{product.name}"
-    info += "\n"
-    info += "Price: $#{product.price}"
-    info += "\n"
-    info += "Description: #{product.description}"
+    info = "Enter an ID in the URL"
+    if params["id"]
+      user_id = params["id"].to_i
+      product = Product.find_by(:id => user_id)
+      info = "Name: #{product.name}"
+      info += "\n"
+      info += "Price: $#{product.price}"
+      info += "\n"
+      info += "Description: #{product.description}"
+    end
     render json: info.as_json
   end
 end
