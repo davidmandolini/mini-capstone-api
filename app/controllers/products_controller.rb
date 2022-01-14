@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
   def index
     info = Product.all
 
-    render json: { message: info }
+    render json: info
   end
 
   def create
@@ -20,7 +20,7 @@ class ProductsController < ApplicationController
     if params["id"]
       info = Product.find_by(:id => params["id"])
     end
-    render json: { message: info }
+    render json: info
   end
 
   def update
@@ -28,6 +28,7 @@ class ProductsController < ApplicationController
     product.name = params["name"] || product.name
     product.price = params["price"] || product.price
     product.description = params["description"] || product.description
+    product.img_url = params["image_url"] || product.img_url
     product.save
     render json: product.as_json
   end
