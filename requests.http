@@ -13,3 +13,13 @@ content-type: application/json
 
 ### Show request
 GET http://localhost:3000/products/2
+
+
+### Update request
+PATCH http://localhost:3000/products/2
+content-type: application/json
+
+{
+  "name": "A new name for this",
+  "pridce": "A new price for this"
+}
