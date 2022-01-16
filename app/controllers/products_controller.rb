@@ -10,6 +10,7 @@ class ProductsController < ApplicationController
       :name => params["name"],
       :price => params["price"],
       :description => params["description"],
+      :img_url => params["image_url"],
     )
     product.save
     render json: product.as_json
@@ -17,7 +18,6 @@ class ProductsController < ApplicationController
 
   def show
     product = Product.find_by(:id => params["id"])
-
     render json: product.as_json(methods: [:is_discounted?, :tax, :total])
   end
 
