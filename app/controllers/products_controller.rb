@@ -16,11 +16,9 @@ class ProductsController < ApplicationController
   end
 
   def show
-    info = "Enter an ID in the URL"
-    if params["id"]
-      info = Product.find_by(:id => params["id"])
-    end
-    render json: info
+    product = Product.find_by(:id => params["id"])
+
+    render json: product.as_json(methods: [:is_discounted?, :tax, :total])
   end
 
   def update
