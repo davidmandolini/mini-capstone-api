@@ -19,9 +19,9 @@ POST http://localhost:3000/suppliers
 content-type: application/json
 
 {
-  "name": "Xbox",
-  "price": "350",
-  "description": "A fine"
+  "name": "Sega Corporation",
+  "email": "support@sega.com",
+  "phone_number": "1-800-555-5394"
 }
 
 ### Products Show request
@@ -31,13 +31,12 @@ GET http://localhost:3000/products/2
 GET http://localhost:3000/suppliers/2
 
 ### Products Update request
-PATCH http://localhost:3000/products/2
+PATCH http://localhost:3000/products/8
 content-type: application/json
 
 {
-  "name": "PS5",
-  "price": 400,
-  "img_url": "https://assets1.ignimgs.com/2020/09/16/ps5-blogroll-1600285536614_160w.jpg?width=1280"
+  "supplier_id": 4,
+  "description": "A great classic"
 }
 
 ### Suppliers Update request
@@ -45,13 +44,11 @@ PATCH http://localhost:3000/suppliers/2
 content-type: application/json
 
 {
-  "name": "PS5",
-  "price": 400,
-  "img_url": "https://assets1.ignimgs.com/2020/09/16/ps5-blogroll-1600285536614_160w.jpg?width=1280"
+  "name": "Sony Corporation of North America"
 }
 
 ### Products Delete request
 DELETE http://localhost:3000/products/12
 
 ### Suppliers Delete request
-DELETE http://localhost:3000/suppliers/12
+DELETE http://localhost:3000/suppliers/5

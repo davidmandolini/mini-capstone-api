@@ -6,7 +6,7 @@ class SuppliersController < ApplicationController
 
   def create
     supplier = Supplier.new(
-      :name => params["namne"],
+      :name => params["name"],
       :email => params["email"],
       :phone_number => params["phone_number"],
     )
@@ -24,9 +24,9 @@ class SuppliersController < ApplicationController
 
   def update
     supplier = Supplier.find_by(:id => params["id"])
-    supplier.name = params["name"]
-    supplier.email = params["email"]
-    supplier.phone_number = params["phone_number"]
+    supplier.name = params["name"] || supplier.name
+    supplier.email = params["email"] || supplier.email
+    supplier.phone_number = params["phone_number"] || supplier.phone_number
     if supplier.save
       render json: supplier
     else
