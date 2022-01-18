@@ -1,7 +1,10 @@
-### Index request
+### Products Index request
 GET http://localhost:3000/products
 
-### Create product
+### Suppliers Index request
+GET http://localhost:3000/suppliers
+
+### Products Create product
 POST http://localhost:3000/products
 content-type: application/json
 
@@ -11,11 +14,23 @@ content-type: application/json
   "description": "A fine"
 }
 
-### Show request
+### Create Suppliers
+POST http://localhost:3000/suppliers
+content-type: application/json
+
+{
+  "name": "Xbox",
+  "price": "350",
+  "description": "A fine"
+}
+
+### Products Show request
 GET http://localhost:3000/products/2
 
+### Suppliers Show request
+GET http://localhost:3000/suppliers/2
 
-### Update request
+### Products Update request
 PATCH http://localhost:3000/products/2
 content-type: application/json
 
@@ -25,6 +40,18 @@ content-type: application/json
   "img_url": "https://assets1.ignimgs.com/2020/09/16/ps5-blogroll-1600285536614_160w.jpg?width=1280"
 }
 
+### Suppliers Update request
+PATCH http://localhost:3000/suppliers/2
+content-type: application/json
 
-### Delete request
+{
+  "name": "PS5",
+  "price": 400,
+  "img_url": "https://assets1.ignimgs.com/2020/09/16/ps5-blogroll-1600285536614_160w.jpg?width=1280"
+}
+
+### Products Delete request
 DELETE http://localhost:3000/products/12
+
+### Suppliers Delete request
+DELETE http://localhost:3000/suppliers/12
