@@ -8,7 +8,7 @@ content-type: application/json
 {
   "name": "Xbox",
   "price": "350",
-  "description": "A fine alternative"
+  "description": "A fine"
 }
 
 ### Show request
@@ -20,8 +20,8 @@ PATCH http://localhost:3000/products/2
 content-type: application/json
 
 {
-  "name": "A new name for this",
-  "price": 600,
+  "name": "PS5",
+  "price": 400,
   "img_url": "https://assets1.ignimgs.com/2020/09/16/ps5-blogroll-1600285536614_160w.jpg?width=1280"
 }
 
