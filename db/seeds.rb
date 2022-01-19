@@ -22,3 +22,15 @@ product.save
 
 product = Product.new(:supplier_id => 3, :name => "Trash", :price => 15, :description => "Storage for your Nintendo Switch")
 product.save
+
+image = Image.new(:url => "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmeuz175HSBJSYmUNIB32hS76_SYFU45w6HQ&usqp=CAU", :product_id => 1)
+image.save
+
+image = Image.new(:url => "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4fgcsfF0pMhXZEkSloB0zRQr02QlIKEMgQA&usqp=CAU", :product_id => 1)
+image.save
+
+image = Image.new(:url => "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKb5GmaQuFPiqbUkJdUN4fUbYGHexfMigxtQ&usqp=CAU", :product_id => 1)
+image.save
+
+image = Image.new(:url => "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIebupmOBNWWIcu8xyYcU6z6Nh5-bW4t1kVA&usqp=CAU", :product_id => 3)
+image.save
