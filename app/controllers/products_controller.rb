@@ -11,10 +11,16 @@ class ProductsController < ApplicationController
       :price => params["price"],
       :description => params["description"],
     )
-    if product.save
+    image = Image.new(
+      :url => params["image_url"],
+      :product_id => product.id,
+    )
+    if product.save && image.save
       render json: product
-    else
+    elsif image.save
       render json: { errors: product.errors.full_messages }, status: :unprocessable_entity
+    else
+      render json: { errors: image.errors.full_messages }, status: :unprocessable_entity
     end
   end
 
