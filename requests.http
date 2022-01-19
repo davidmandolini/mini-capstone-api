@@ -19,9 +19,9 @@ POST http://localhost:3000/suppliers
 content-type: application/json
 
 {
-  "name": "Sega Corporation",
-  "email": "support@sega.com",
-  "phone_number": "1-800-555-5394"
+  "name": "Nintendo",
+  "email": "support@nintendo.com",
+  "phone_number": "1-800-123-4567"
 }
 
 ### Products Show request
