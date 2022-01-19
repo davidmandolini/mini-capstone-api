@@ -10,12 +10,11 @@ class ProductsController < ApplicationController
       :name => params["name"],
       :price => params["price"],
       :description => params["description"],
-      :img_url => params["image_url"],
     )
     if product.save
       render json: product
     else
-      render json: { errors: product.errors.full_messages}, status: :unprocessable_entity
+      render json: { errors: product.errors.full_messages }, status: :unprocessable_entity
     end
   end
 
@@ -29,11 +28,10 @@ class ProductsController < ApplicationController
     product.name = params["name"] || product.name
     product.price = params["price"] || product.price
     product.description = params["description"] || product.description
-    product.img_url = params["image_url"] || product.img_url
     if product.save
       render json: product
     else
-      render json: { errors: product.errors.full_messages}, status: :unprocessable_entity
+      render json: { errors: product.errors.full_messages }, status: :unprocessable_entity
     end
   end
 
