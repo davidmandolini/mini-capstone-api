@@ -31,12 +31,11 @@ GET http://localhost:3000/products/2
 GET http://localhost:3000/suppliers/2
 
 ### Products Update request
-PATCH http://localhost:3000/products/8
+PATCH http://localhost:3000/products/14
 content-type: application/json
 
 {
-  "supplier_id": 4,
-  "description": "A great classic"
+  "supplier_id": 7
 }
 
 ### Suppliers Update request
