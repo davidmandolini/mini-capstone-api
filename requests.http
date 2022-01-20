@@ -24,6 +24,7 @@ GET http://localhost:3000/products
 ### Suppliers Index request
 GET http://localhost:3000/suppliers
 
+
 ### Products Create product
 POST http://localhost:3000/products
 content-type: application/json
@@ -47,8 +48,10 @@ content-type: application/json
 ### Products Show request
 GET http://localhost:3000/products/2
 
+
 ### Suppliers Show request
 GET http://localhost:3000/suppliers/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDI3Mjk2MjB9.SxJIoywgKYYmVJZTK8YC2OAprUt4mu7Px3fpoeEPN0Q
 
 ### Products Update request
 PATCH http://localhost:3000/products/8
