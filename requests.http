@@ -14,7 +14,7 @@ POST http://localhost:3000/sessions
 Content-Type: application/json
 
 {
-  "email": "test@test.com",
+  "email": "test2@test.com",
   "password": "password"
 }
 
@@ -45,22 +45,23 @@ content-type: application/json
   "phone_number": "1-800-123-4567"
 }
 
+### Orders Index
+GET http://localhost:3000/orders
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDI4MTQ0ODR9.nSRGEPRdlkYfPiSbVs-nhx33GBJ5zvbFq5LoVwGQ-9Q
 
 ### Orders Create
 POST http://localhost:3000/orders
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDI4MTQ0ODR9.nSRGEPRdlkYfPiSbVs-nhx33GBJ5zvbFq5LoVwGQ-9Q
 content-type: application/json
 
 {
-  "user_id": 1,
   "product_id": 2,
-  "quantity": 3,
-  "subtotal": 100,
-  "tax": 15,
-  "total": 115
+  "quantity": 3
 }
 
-### Orders Show request
+### Orders Show
 GET http://localhost:3000/orders/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDI4MTQ0ODR9.nSRGEPRdlkYfPiSbVs-nhx33GBJ5zvbFq5LoVwGQ-9Q
 
 ### Products Show request
 GET http://localhost:3000/products/2
