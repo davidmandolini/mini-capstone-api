@@ -18,14 +18,14 @@ Content-Type: application/json
   "password": "password"
 }
 
-### Products Index request
+### Products Index
 GET http://localhost:3000/products
 
-### Suppliers Index request
+### Suppliers Index
 GET http://localhost:3000/suppliers
 
 
-### Products Create product
+### Products Create
 POST http://localhost:3000/products
 content-type: application/json
 
@@ -35,7 +35,7 @@ content-type: application/json
   "description": "A fine alternative to the best"
 }
 
-### Create Suppliers
+### Suppliers Create
 POST http://localhost:3000/suppliers
 content-type: application/json
 
@@ -46,7 +46,7 @@ content-type: application/json
 }
 
 
-### Create Orders
+### Orders Create
 POST http://localhost:3000/orders
 content-type: application/json
 
@@ -59,6 +59,8 @@ content-type: application/json
   "total": 115
 }
 
+### Orders Show request
+GET http://localhost:3000/orders/1
 
 ### Products Show request
 GET http://localhost:3000/products/2
@@ -67,6 +69,9 @@ GET http://localhost:3000/products/2
 ### Suppliers Show request
 GET http://localhost:3000/suppliers/2
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDI3Mjk2MjB9.SxJIoywgKYYmVJZTK8YC2OAprUt4mu7Px3fpoeEPN0Q
+
+
+
 
 ### Products Update request
 PATCH http://localhost:3000/products/8

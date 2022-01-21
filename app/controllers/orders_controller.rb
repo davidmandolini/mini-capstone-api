@@ -11,4 +11,9 @@ class OrdersController < ApplicationController
     order.save
     render json: order
   end
+
+  def show
+    order = Order.find_by(:id => params[:id])
+    render json: order
+  end
 end
