@@ -45,6 +45,21 @@ content-type: application/json
   "phone_number": "1-800-123-4567"
 }
 
+
+### Create Orders
+POST http://localhost:3000/orders
+content-type: application/json
+
+{
+  "user_id": 1,
+  "product_id": 2,
+  "quantity": 3,
+  "subtotal": 100,
+  "tax": 15,
+  "total": 115
+}
+
+
 ### Products Show request
 GET http://localhost:3000/products/2
 
