@@ -1,9 +1,0 @@
-1. Make an orders#create route
-2. Which means I need an orders controller
-3. Need to associate the order with the current user and the current product
-  - use current_user verification
-  - how do i determine current product?
-4. Need to include quantity, price, tax, and total
-5. Need to subtract the order quantity from the inventory
-  - include as part of the orders controller
-  - need happy/sad paths for whether the quantity exists in the inventory
