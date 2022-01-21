@@ -1,3 +1,6 @@
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDI4MTQ0ODR9.nSRGEPRdlkYfPiSbVs-nhx33GBJ5zvbFq5LoVwGQ-9Q
+
+
 ### Users create (signup)
 POST http://localhost:3000/users
 Content-Type: application/json
@@ -26,11 +29,10 @@ Content-Type: application/json
 
 ### Orders Index
 GET http://localhost:3000/orders
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDI4MTQ0ODR9.nSRGEPRdlkYfPiSbVs-nhx33GBJ5zvbFq5LoVwGQ-9Q
-
+Authorization: Bearer {{jwt}}
 ### Orders Create
 POST http://localhost:3000/orders
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDI4MTQ0ODR9.nSRGEPRdlkYfPiSbVs-nhx33GBJ5zvbFq5LoVwGQ-9Q
+Authorization: Bearer {{jwt}}
 content-type: application/json
 
 {
@@ -40,7 +42,7 @@ content-type: application/json
 
 ### Orders Show
 GET http://localhost:3000/orders/1
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDI4MTQ0ODR9.nSRGEPRdlkYfPiSbVs-nhx33GBJ5zvbFq5LoVwGQ-9Q
+Authorization: Bearer {{jwt}}
 
 
 
@@ -89,7 +91,7 @@ content-type: application/json
 }
 ### Suppliers Show request
 GET http://localhost:3000/suppliers/2
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDI3Mjk2MjB9.SxJIoywgKYYmVJZTK8YC2OAprUt4mu7Px3fpoeEPN0Q
+Authorization: Bearer {{jwt}}
 
 ### Suppliers Update request
 PATCH http://localhost:3000/suppliers/2

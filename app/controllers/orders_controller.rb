@@ -1,12 +1,10 @@
 class OrdersController < ApplicationController
+  before_action :authenticate_user
+
   def index
-    if current_user
-      user = User.find_by(:id => current_user.id)
-      orders = user.orders
-      render json: orders
-    else
-      render json: { :message => "You are not authorized to view this page." }
-    end
+    user = User.find_by(:id => current_user.id)
+    orders = user.orders
+    render json: orders
   end
 
   def create
@@ -28,7 +26,7 @@ class OrdersController < ApplicationController
 
   def show
     order = Order.find_by(:id => params[:id])
-    if current_user && current_user.id == order.user_id
+    if current_user.id == order.user_id
       render json: order
     else
       render json: { :message => "You are not authorized to view this order" }
