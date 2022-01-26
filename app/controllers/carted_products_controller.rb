@@ -16,4 +16,11 @@ class CartedProductsController < ApplicationController
     carted_product.save
     render json: carted_product
   end
+
+  def destroy
+    carted_product = CartedProduct.find_by(:user_id => current_user.id, :id => params[:id])
+    carted_product.status = "removed"
+    carted_product.save
+    render json: { :message => "Carted Products successfully removed!" }
+  end
 end
