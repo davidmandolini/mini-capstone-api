@@ -1,4 +1,4 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDI4MTQ0ODR9.nSRGEPRdlkYfPiSbVs-nhx33GBJ5zvbFq5LoVwGQ-9Q
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDMyNDgzNjF9.G-zP1snMG8Cc106OddZu4b_pWWerOHZWGRsGv_wzSds
 
 
 ### Users create (signup)
@@ -24,7 +24,19 @@ Content-Type: application/json
 }
 
 
+### Carted Products Index
+GET http://localhost:3000/carted_products
+Authorization: Bearer {{jwt}}
 
+### Carted Products Create
+POST http://localhost:3000/carted_products
+Authorization: Bearer {{jwt}}
+content-type: application/json
+
+{
+  "product_id": 2,
+  "quantity": 3
+}
 
 
 ### Orders Index
