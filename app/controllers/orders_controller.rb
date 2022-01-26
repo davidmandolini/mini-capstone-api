@@ -3,7 +3,7 @@ class OrdersController < ApplicationController
 
   def index
     orders = Order.where(:user_id => current_user.id)
-    render json: orders, include: "**"
+    render json: orders, include: "carted_products.product"
   end
 
   def create
@@ -23,7 +23,7 @@ class OrdersController < ApplicationController
       item.save
     end
     if order.save
-      render json: order, include: "**"
+      render json: order, include: "carted_products.product"
     else
       render json: { :message => "Error" }
     end
@@ -32,7 +32,7 @@ class OrdersController < ApplicationController
   def show
     order = Order.find_by(:id => params[:id])
     if current_user.id == order.user_id
-      render json: order, include: "**"
+      render json: order, include: "carted_products.product"
     else
       render json: { :message => "You are not authorized to view this order" }
     end
