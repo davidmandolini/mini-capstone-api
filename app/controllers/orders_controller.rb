@@ -11,6 +11,7 @@ class OrdersController < ApplicationController
       :user_id => current_user.id,
     )
     if order.save
+      carted_products = current_user.carted_products.where(status: "carted")
       carted_products.each do |item|
         item.status = "purchased"
         item.order_id = order.id
