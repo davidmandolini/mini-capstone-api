@@ -10,19 +10,13 @@ class OrdersController < ApplicationController
     order = Order.new(
       :user_id => current_user.id,
     )
-    carted_products = CartedProduct.where(:user_id => current_user.id, :status => "carted")
-    order.subtotal = 0
-    carted_products.each do |item|
-      order.subtotal += item.product.price * item.quantity
-    end
-    order.tax = 0.09 * order.subtotal
-    order.total = order.subtotal + order.tax
-
-    carted_products.each do |item|
-      item.status = "purchased"
-      item.save
-    end
     if order.save
+      carted_products.each do |item|
+        item.status = "purchased"
+        item.order_id = order.id
+        item.save
+      end
+      order.perform_calculations
       render json: order, include: "carted_products.product"
     else
       render json: { :message => "Error" }
