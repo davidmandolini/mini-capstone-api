@@ -1,4 +1,4 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDMyNDgzNjF9.G-zP1snMG8Cc106OddZu4b_pWWerOHZWGRsGv_wzSds
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NDQ4NTI4MjJ9.QSDtmOEXZ9vjKSewqupplUI4uKO-EPXFOzfFczDs9IA
 
 
 ### Users create (signup)
@@ -39,7 +39,7 @@ content-type: application/json
 }
 
 ### Carted Products Destroy
-DELETE http://localhost:3000/carted_products/1
+DELETE http://localhost:3000/carted_products/14
 Authorization: Bearer {{jwt}}
 
 
@@ -57,7 +57,7 @@ content-type: application/json
 }
 
 ### Orders Show
-GET http://localhost:3000/orders/1
+GET http://localhost:3000/orders/3
 Authorization: Bearer {{jwt}}
 
 
