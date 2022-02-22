@@ -21,4 +21,12 @@ class Product < ApplicationRecord
   def total
     price + tax
   end
+
+  def primary_image
+    if images.length > 0
+      return images[0].url
+    else
+      return "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpfTuch8F_PkEaqS6nATu1Bwm6ppJrPcghMg&usqp=CAU"
+    end
+  end
 end

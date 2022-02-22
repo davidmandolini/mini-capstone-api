@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
   before_action :authenticate_admin, except: [:index, :show]
 
   def index
-    products = Product.all.includes(:supplier, :images, :categories)
+    products = Product.all
 
     render json: products
   end

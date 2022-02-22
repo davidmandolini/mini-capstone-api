@@ -1,8 +1,8 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NDQ4NTI4MjJ9.QSDtmOEXZ9vjKSewqupplUI4uKO-EPXFOzfFczDs9IA
-
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NDU1NzYwMzd9.63rp67XHwVBDr-0odZmDvWwtADzdHn3p3QqrNciX4zk
+@host = http://localhost:3000
 
 ### Users create (signup)
-POST http://localhost:3000/users
+POST {{host}}/users
 Content-Type: application/json
 
 {
@@ -15,7 +15,7 @@ Content-Type: application/json
 
 
 ### Sessions create (login)
-POST http://localhost:3000/sessions
+POST {{host}}/sessions
 Content-Type: application/json
 
 {
@@ -25,11 +25,11 @@ Content-Type: application/json
 
 
 ### Carted Products Index
-GET http://localhost:3000/carted_products
+GET {{host}}/carted_products
 Authorization: Bearer {{jwt}}
 
 ### Carted Products Create
-POST http://localhost:3000/carted_products
+POST {{host}}/carted_products
 Authorization: Bearer {{jwt}}
 content-type: application/json
 
@@ -39,15 +39,15 @@ content-type: application/json
 }
 
 ### Carted Products Destroy
-DELETE http://localhost:3000/carted_products/14
+DELETE {{host}}/carted_products/14
 Authorization: Bearer {{jwt}}
 
 
 ### Orders Index
-GET http://localhost:3000/orders
+GET {{host}}/orders
 Authorization: Bearer {{jwt}}
 ### Orders Create
-POST http://localhost:3000/orders
+POST {{host}}/orders
 Authorization: Bearer {{jwt}}
 content-type: application/json
 
@@ -57,30 +57,32 @@ content-type: application/json
 }
 
 ### Orders Show
-GET http://localhost:3000/orders/3
+GET {{host}}/orders/3
 Authorization: Bearer {{jwt}}
 
 
 
 
 ### Products Index
-GET http://localhost:3000/products
+GET {{host}}/products
 
 ### Products Create
-POST http://localhost:3000/products
+POST {{host}}/products
+Authorization: Bearer {{jwt}}
 content-type: application/json
 
 {
-  "name": "Xbox",
+  "name": "Xbox2000",
   "price": "350",
-  "description": "A fine alternative to the best"
+  "description": "A fine alternative to the best",
+  "supplier_id": 1,
 }
 
 ### Products Show request
-GET http://localhost:3000/products/2
+GET {{host}}/products/2
 
 ### Products Update request
-PATCH http://localhost:3000/products/8
+PATCH {{host}}/products/8
 content-type: application/json
 
 {
@@ -88,16 +90,16 @@ content-type: application/json
 }
 
 ### Products Delete request
-DELETE http://localhost:3000/products/12
+DELETE {{host}}/products/12
 
 
 
 
 ### Suppliers Index
-GET http://localhost:3000/suppliers
+GET {{host}}/suppliers
 
 ### Suppliers Create
-POST http://localhost:3000/suppliers
+POST {{host}}/suppliers
 content-type: application/json
 
 {
@@ -106,11 +108,11 @@ content-type: application/json
   "phone_number": "1-800-123-4567"
 }
 ### Suppliers Show request
-GET http://localhost:3000/suppliers/2
+GET {{host}}/suppliers/2
 Authorization: Bearer {{jwt}}
 
 ### Suppliers Update request
-PATCH http://localhost:3000/suppliers/2
+PATCH {{host}}/suppliers/2
 content-type: application/json
 
 {
@@ -118,4 +120,4 @@ content-type: application/json
 }
 
 ### Suppliers Delete request
-DELETE http://localhost:3000/suppliers/5
+DELETE {{host}}/suppliers/5
