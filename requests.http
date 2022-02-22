@@ -1,5 +1,6 @@
 @jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NDU1NzYwMzd9.63rp67XHwVBDr-0odZmDvWwtADzdHn3p3QqrNciX4zk
 @host = http://localhost:3000
+# @host = http://safe-fortress-14336.herokuapp.com/
 
 ### Users create (signup)
 POST {{host}}/users
@@ -69,7 +70,7 @@ GET {{host}}/products
 ### Products Create
 POST {{host}}/products
 Authorization: Bearer {{jwt}}
-content-type: application/json
+Content-type: application/json
 
 {
   "name": "Xbox2000",
